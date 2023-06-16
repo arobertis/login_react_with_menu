@@ -9,7 +9,7 @@ export const Login = () => {
 
 
   function iniciarSesion(e){
-    e.preventDefault();
+    e.preventDefault();// no recargar
     var txtusu = document.getElementById("txtusu").value;
     var txtpas = document.getElementById("txtpas").value;
     if(txtusu.length===0 || txtpas.length===0){
@@ -17,13 +17,13 @@ export const Login = () => {
     }else{
       if(usu === "admin" && pas==="123"){
         setMiLogin("true");
-        document.getElementById("form_login").style.display = "none";
+        document.getElementById("form_login").style.display = "none";// se oculta el formulario con el id form_login
       }else{
         setMiLogin("false");
         alert("Error De Usuario y/o Contraseña!!");
-        document.getElementById("txtusu").value = "";
-        document.getElementById("txtpas").value = "";
-        document.getElementById("txtusu").focus();
+        document.getElementById("txtusu").value = "";// limpiar ó borrar campo
+        document.getElementById("txtpas").value = "";// limpiar ó borrar campo
+        document.getElementById("txtusu").focus(); //dejar cursor en campo txtusu
         
       }
     }
@@ -47,9 +47,8 @@ export const Login = () => {
         </div><br/>
         <input type="submit"  className="btn btn-primary" value="Login" onClick={ iniciarSesion }/>
     </form>
-
-    { miLogin === "true" && <Menu usu={usu}/> }
-
+    { miLogin === "true" && <Menu usu={usu}/> }{/* afirmacion simple */}
+    {/* { miLogin === "true" ?   <Menu usu={usu}/>  : "se ejecuta en el caso que no sea sierto"} */}{/* afirmacion compuesta */}
 </div>
 
 

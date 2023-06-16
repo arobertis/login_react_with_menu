@@ -13,8 +13,8 @@ export const Menu = (props) => {
   
 
   function cerrarSesion(){
-    document.getElementById("caja_menu").style.display = "none";
-    document.getElementById("form_login").style.display = "block";
+    document.getElementById("caja_menu").style.display = "none";// ocultar
+    document.getElementById("form_login").style.display = "block";//mostrar
     document.getElementById("txtusu").value = "";
     document.getElementById("txtpas").value = "";
     document.getElementById("txtusu").focus();
